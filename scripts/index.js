@@ -5,11 +5,19 @@ require("./lib/ui-bootstrap-tpls-0.11.0.min");
 require("./bootstrap");
 require("../styles/bootstrap.css");
 
+
+function getDateString() {
+  return (new Date()).toISOString().slice(0,10);
+}
+
 var modalTemplate = require("../modal-template.html"),
     ModalInstanceCtrl = function($scope, $modalInstance) {
-      $scope.ok = function() {
-        $modalInstance.close();
-      }
+      $scope.user = {};
+
+      $scope.submit = function(form) {
+        var user = angular.copy($scope.user);
+        $modalInstance.close(user);
+      };
 
       $scope.cancel = function() {
         $modalInstance.dismiss('cancel');
@@ -21,6 +29,8 @@ angular.module("needleApp", ['ui.bootstrap'])
   .controller("ModalController", [function() {
   }])
   .controller("MyController", ["$scope", "$modal", function($scope, $modal) {
+      $scope.users = [];
+
       $scope.open = function(size) {
         var modalInstance = $modal.open({
           "template": modalTemplate,
@@ -28,7 +38,9 @@ angular.module("needleApp", ['ui.bootstrap'])
           size: size
         });
 
-        modalInstance.result.then(function(){}, function(){});
+        modalInstance.result.then(function(user){
+          $scope.users.push(user);
+        }, function(){});
       };
 
       $scope.greetMe = "World!";
