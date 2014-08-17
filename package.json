@@ -3,12 +3,21 @@
   "version": "0.0.0",
   "description": "angular modal demo",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "webpack-dev-server": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "postinstall": "napa"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/soeccentric/needlenumber1.git"
   },
   "author": "Myong Kim",
-  "homepage": "https://github.com/soeccentric/needlenumber1"
+  "homepage": "https://github.com/soeccentric/needlenumber1",
+  "napa": {
+    "angular": "angular/bower-angular"
+  },
+  "devDependencies": {
+    "webpack": "^1.3.3-beta2",
+    "webpack-dev-server": "^1.4.10",
+    "napa": "^0.4.1"
+  }
 }
