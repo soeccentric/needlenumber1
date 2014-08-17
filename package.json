@@ -1,0 +1,14 @@
+{
+  "name": "needlenumber1",
+  "version": "0.0.0",
+  "description": "angular modal demo",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/soeccentric/needlenumber1.git"
+  },
+  "author": "Myong Kim",
+  "homepage": "https://github.com/soeccentric/needlenumber1"
+}
