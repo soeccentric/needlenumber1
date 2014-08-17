@@ -7,6 +7,20 @@
   <body>
     <div ng-controller="MyController">
       <button class="btn btn-default" ng-click="open('lg')">Open me!</button>
+      <table ng-table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tr ng-repeat="user in users">
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.date}}</td>
+        </tr>
+      </table>
     </div>
   </body>
 </html>

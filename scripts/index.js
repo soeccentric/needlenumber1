@@ -7,7 +7,7 @@ require("../styles/bootstrap.css");
 
 
 function getDateString() {
-  return (new Date()).toISOString().slice(0,10);
+  return (new Date()).toISOString();
 }
 
 var modalTemplate = require("../modal-template.html"),
@@ -16,6 +16,7 @@ var modalTemplate = require("../modal-template.html"),
 
       $scope.submit = function(form) {
         var user = angular.copy($scope.user);
+        user.date = getDateString();
         $modalInstance.close(user);
       };
 
